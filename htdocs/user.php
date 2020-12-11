@@ -23,5 +23,14 @@
             $sql-> execute(array($username, $password, $email, $connected));
             $sql-> closerCursor();
         }
+
+        public function session() {
+            session_start();
+            $_SESSION["user"] = $user;
+        }
+
+        public function offsession(){
+            session_destroy();
+        }
     }
 ?>
